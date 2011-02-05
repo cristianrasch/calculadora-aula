@@ -1,0 +1,180 @@
+# coding: utf-8
+
+common:
+  str_encoding: UTF-8
+
+  curr_conv:
+    host: www.exchangerate-api.com
+    api_key: dSVgg-IVHBd-jUvLn
+    cache_timeout: 2
+    
+  site:
+    title: Calculadora aula
+    wizard_email_contact: cristianrasch@gmail.com
+    project_email_contact: diego.brengi@gmail.com
+  
+  general_settings:
+    students_count: 45
+    students_per_workstation: 3
+    teachers_count: 1
+    clients_per_server: 20
+  
+  hardware_prices:
+    ram_unit_price: 20
+    hd_unit_price: 2
+    network_cable_unit_price: 0.5
+    switch_port_unit_price: 10
+    printer_unit_price: 100
+    scanner_unit_price: 101
+    rj45_connector_unit_price: 0.5
+    ups_unit_price: 150
+  
+  lan_settings:
+    ports_per_switch: 24
+    medium_distance_bt_pcs_switch: 7
+    installation_materials_and_wiring_cost: 100
+  
+  workstations_settings:
+    students_defaults:
+      ram_size_in_gigs: 1
+      hd_size_in_gigs: 50
+      processor_unit_price: 100
+      motherboard_unit_price: 70
+      power_supply_unit_price: 20
+      case_unit_price: 20
+      keyboard_unit_price: 10
+      mouse_unit_price: 10
+      speakers_unit_price: 10
+      monitor_unit_price: 150
+      external_network_card_unit_price: 0
+      external_video_card_unit_price: 0
+      external_power_supply_unit_price: 0
+      extra1_unit_price: 0
+      extra2_unit_price: 0
+      extra3_unit_price: 0
+      extra4_unit_price: 0
+  
+    teachers_defaults:
+      ram_size_in_gigs: 2
+      hd_size_in_gigs: 80
+      processor_unit_price: 200
+      motherboard_unit_price: 100
+      power_supply_unit_price: 20
+      case_unit_price: 30
+      keyboard_unit_price: 10
+      mouse_unit_price: 10
+      speakers_unit_price: 10
+      monitor_unit_price: 200
+      external_network_card_unit_price: 0
+      external_video_card_unit_price: 0
+      external_power_supply_unit_price: 0
+      extra1_unit_price: 0
+      extra2_unit_price: 0
+      extra3_unit_price: 0
+      extra4_unit_price: 0
+    
+    servers_defaults:
+      ram_size_in_gigs: 5
+      hd_size_in_gigs: 250
+      processor_unit_price: 300
+      motherboard_unit_price: 150
+      power_supply_unit_price: 20
+      case_unit_price: 30
+      keyboard_unit_price: 10
+      mouse_unit_price: 10
+      speakers_unit_price: 0
+      monitor_unit_price: 0
+      external_network_card_unit_price: 10
+      external_video_card_unit_price: 0
+      external_power_supply_unit_price: 0
+      extra1_unit_price: 0
+      extra2_unit_price: 0
+      extra3_unit_price: 0
+      extra4_unit_price: 0
+    
+    thin_clients_defaults:
+      ram_size_in_gigs: 1
+      hd_size_in_gigs: 0
+      processor_unit_price: 180
+      motherboard_unit_price: 0
+      power_supply_unit_price: 0
+      case_unit_price: 0
+      keyboard_unit_price: 10
+      mouse_unit_price: 10
+      speakers_unit_price: 10
+      monitor_unit_price: 150
+      external_network_card_unit_price: 0
+      external_video_card_unit_price: 0
+      external_power_supply_unit_price: 10
+      extra1_unit_price: 0
+      extra2_unit_price: 0
+      extra3_unit_price: 0
+      extra4_unit_price: 0
+  
+  furnishings:
+    students_defaults:
+      chairs_unit_price: 50
+      tables_unit_price: 70
+      others_unit_price: 0
+  
+    teachers_defaults:
+      chairs_unit_price: 100
+      tables_unit_price: 200
+      others_unit_price: 0
+  
+    servers_defaults:
+      chairs_unit_price: 0
+      tables_unit_price: 100
+      others_unit_price: 0
+  
+    tables_per_workstation: 1
+    others_per_workstation: 1
+  
+  software:
+    students_standalone_defaults:
+      free_soft_only: true
+      os_unit_price: 200
+      office_suite_unit_price: 99
+      class_mon_n_ctrl_apps_unit_price: 30
+  
+    teachers_standalone_defaults:
+      free_soft_only: true
+      os_unit_price: 200
+      office_suite_unit_price: 99
+      class_mon_n_ctrl_apps_unit_price: 0
+  
+    tc_server_defaults:
+      free_soft_only: true
+      os_unit_price: 999
+      office_suite_unit_price: 99
+      tc_srv_unit_price: 0
+      web_srv_unit_price: 0
+      proxy_srv_unit_price: 0
+      file_n_print_srv_unit_price: 0
+    
+    tc_defaults:
+      free_soft_only: true
+      os_unit_price: 120
+      office_suite_unit_price: 0
+      tc_lic_unit_price: 127.20
+      spec_apps_unit_price: 0
+      others_unit_price: 0
+  
+  settings:
+    students_standalone_workstations_enabled: false
+    teachers_standalone_workstations_enabled: true
+    thin_clients_enabled: true
+    thin_clients_server_enabled: true
+    lan_enabled: true
+    ups_enabled: true
+    printers_count: 1
+    scanners_count: 1
+    students_furnishings_enabled: true
+    teachers_furnishings_enabled: true
+    servers_furnishings_enabled: true
+    building_improvements_cost: 0
+    electric_installation_cost: 0
+    
+  ui:
+    tas_row_count: 3
+    tas_col_count: 30

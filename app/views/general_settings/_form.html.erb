@@ -1,0 +1,23 @@
+<p>
+  <%= form.label :students_count,
+              GeneralSettings.human_attribute_name('students_count').humanize %><br>
+  <%= form.text_field :students_count %>
+</p>
+<p>
+  <%= form.label :students_per_workstation,
+              GeneralSettings.human_attribute_name('students_per_workstation').humanize %><br>
+  <%= form.select :students_per_workstation, (1..5).map {|i| [i,i]}, :include_blank => true %>
+</p>
+<p>
+  <%= form.label :teachers_count,
+              GeneralSettings.human_attribute_name('teachers_count').humanize %><br>
+  <%= form.select :teachers_count, (1..2).map {|i| [i,i]}, :include_blank => true %>
+</p>
+<p>
+  <%= form.label :clients_per_server,
+              GeneralSettings.human_attribute_name('clients_per_server').humanize %><br>
+  <%= form.select :clients_per_server, (1..30).map {|i| [i,i]}, :include_blank => true %>
+</p>
+<p>
+  <%= form.submit t('msgs.save') %>
+</p>

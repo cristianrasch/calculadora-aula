@@ -1,0 +1,231 @@
+# coding: utf-8
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  activerecord:
+    models:
+      # budget: presupuesto
+      general_settings: classroom's general settings
+      hardware_prices: hardware prices
+      lan_settings: lan parameters
+      workstations_settings: workstations parameters
+      # furnishings: mobiliario
+      # software: software
+      settings: general settings
+    attributes:
+      budget:
+        # name: nombre
+        # description: descripción
+        # created_at: fecha de creación
+        # updated_at: fecha de modificación
+        students_workstations_settings: student's workstations settings
+        teachers_workstations_settings: teacher's workstations settings
+        thin_clients_workstations_settings: thin-client's workstations settings
+        servers_workstations_settings: server's workstations settings
+        students_furnishings: student's furnishings
+        teachers_furnishings: teacher's furnishings
+        servers_furnishings: server's furnishings
+        students_standalone_software: student's standalone software
+        teachers_standalone_software: teacher's standalone software
+        tc_server_software: TC's server's software
+        tc_software: thin-client's software
+      general_settings:
+        # students_count: students_count
+        # students_per_workstation: alumnos por computadora
+        # teachers_count: cantidad de maestros (con pc)
+        # clients_per_server: cantidad de clientes por servidor
+        students_workstations_count: students workstation's count
+        # servers_count: número de servidores
+        # created_at: fecha de creación
+        updated_at: fecha de modificación
+      hardware_prices:
+        ram_unit_price: ram's unit price
+        hd_unit_price: hd's unit price
+        network_cable_unit_price: network cable's unit price
+        switch_port_unit_price: switch port's unit price
+        printer_unit_price: laser printer's unit price
+        scanner_unit_price: scanner's unit price
+        rj45_connector_unit_price: rj45 connector's unit price
+        ups_unit_price: ups' unit price
+        # created_at: fecha de creación
+        # updated_at: fecha de modificación
+      lan_settings:
+        # ports_per_switch: cantidad de bocas por switch
+        medium_distance_bt_pcs_switch: medium distance bt pcs & switch
+        installation_materials_and_wiring_cost: installation materials & wiring cost
+        # workstations_and_servers_count: número de estaciones y servidores
+        # switches_count: cantidad de switches
+        # network_cable_meters_count: cantidad de mtrs de cable de red
+        # switches_cost: precio de los switches
+        # network_cable_cost: precio del cable de red
+        # rj45_connectors_cost: precio de los conectores rj45
+        total_cost: subtotal
+        # created_at: fecha de creación
+        # updated_at: fecha de modificación
+      workstations_settings:
+        # ram_size_in_gigs: tamaño de la memoria ram (en gigas)
+        # hd_size_in_gigs: tamaño del disco rígido (en gigas)
+        ram_cost: ram unit price
+        hd_cost: hd unit price
+        processor_unit_price: processor's unit price
+        motherboard_unit_price: motherboard's unit price
+        power_supply_unit_price: power supply's unit price
+        case_unit_price: case's unit price
+        keyboard_unit_price: keyboard's unit price
+        mouse_unit_price: mouse's unit price
+        speakers_unit_price: speakers' unit price
+        monitor_unit_price: monitor's unit price
+        external_network_card_unit_price: external network's card unit price
+        external_video_card_unit_price: external video card's unit price
+        external_power_supply_unit_price: external power supply's unit price
+        extra1_unit_price: extra1's unit price
+        extra2_unit_price: extra2's unit price
+        extra3_unit_price: extra3's unit price
+        extra4_unit_price: extra4's unit price
+        # created_at: fecha de creación
+        # updated_at: fecha de modificación
+        total_cost: subtotal
+      furnishings:
+        # chairs_per_workstation: sillas por puesto
+        chairs_unit_price: chair's unit price
+        # tables_per_workstation: mesas por puesto
+        tables_unit_price: table's unit price
+        # others_per_workstation: otros por puesto
+        others_unit_price: others' unit price
+        # created_at: fecha de creación
+        # updated_at: fecha de modificación
+        total_cost: subtotal
+        chairs_cost: chairs' cost
+        tables_cost: tables' cost
+        others_cost: others' cost
+      software:
+        os_unit_price: os' unit price
+        office_suite_unit_price: office suite's unit price
+        class_mon_n_ctrl_apps_unit_price: class monitoring & ctrl apps' unit price
+        tc_srv_unit_price: tc-server's software unit price 
+        web_srv_unit_price: web server's unit price
+        proxy_srv_unit_price: proxy server's unit price
+        file_n_print_srv_unit_price: file & printing server's unit price
+        tc_lic_unit_price: thin-client's license unit price
+        spec_apps_unit_price: specialized apps' unit price
+        others_unit_price: others' unit price
+        free_soft_only: runs only free software?
+        total_cost: subtotal
+        # created_at: fecha de creación
+        # updated_at: fecha de modificación
+      settings:
+        students_standalone_workstations_enabled: "students' standalone workstations enabled?"
+        teachers_standalone_workstations_enabled: "teachers' standalone workstations enabled?"
+        thin_clients_enabled: "thin clients enabled?"
+        thin_clients_server_enabled: "thin clients' server enabled?"
+        lan_enabled: "lan enabled?"
+        ups_enabled: "ups enabled?"
+        printers_count: "printers' count"
+        scanners_count: "scanners' count"
+        students_furnishings_enabled: "students' furnishings enabled?"
+        teachers_furnishings_enabled: "teachers' furnishings enabled?"
+        servers_furnishings_enabled: "servers' furnishings enabled?"
+        building_improvements_cost: "building improvements' cost"
+        electric_installation_cost: "electric installation's cost"
+        # created_at: fecha de creación
+        # updated_at: fecha de modificación
+        total_cost: total cost
+        prop_students_soft_enabled: "proprietary students' soft enabled?"
+        prop_teachers_soft_enabled: "proprietary teachers' soft enabled?"
+        prop_tc_server_soft_enabled: "proprietary tc-server's soft enabled?"
+        prop_tc_soft_enabled: "proprietary thin-client's soft enabled?"
+        
+  site:
+    template_design: Design by
+    description: ICT classroom implementation cost calculator
+    keywords: calculator, cost, ICT, classroom, free software, proprietary software
+    author: Cristian Rasch, software engineer
+    project_title: Demostrative ICT classroom implementation targeting elementary & high schools in La Matanza
+    
+  msgs:
+    welcome: Welcome
+    about:
+      link: About this app
+      title: Estimation helper assisting in the calculation of the cost incurred when implementating an ICT lab
+      intro: 
+        p1: Implementation of a demostrative ICT classroom targeting elementary and high schools in La Matanza (ING:011/2007).
+        p2: Financed by Universidad Nacional de La Matanza, Departamento de Ingeniería e Investigaciones Tecnológicas.
+      wizard:
+        aim: Helper's aim
+        p1: As part of this project (see below) we faced the need to develop such a tool which helped us quickly estimate the initial investment needed for implementing an ICT classroom, considering specially factors as hardware, software and basic furnishings.
+        p2: Variable aspects such as RRHH, building's infrastructure and others should be analyzed separately for each particular situation.
+        p3: This tool allows you to choose among the following alternatives
+        p4: Classrooms composed of thin clients and its server.|Classrooms with standalone workstations for students.|Special workstations for teachers.|Free and/or proprietary software alternatives.
+      project:
+        aim: Project's aim
+        p1: This project focuses on studying different implementations of an ICT classroom, so as to provide one that can be used as a reference in elementary and high schools in La Matanza.
+        p2: This study aims to minimize the investment needed in order to set up or update an ICT classroom. By strictly sticking to free software, on top of monetary savings, we hope to widen the availability of educational applications and offer better access to technology for teachers and students as well.
+      warning:
+        title: Warning
+        p1: This tool is still under development, use it at your own risk.
+        p2: In order to contribute with corrections or suggestions please contact the developer.
+      contact:
+        title: Contact us
+        p1: About this tool
+        p2: About this project
+    not_found: There is no
+    actions: Actions
+    new: Create
+    save: Save
+    saved: saved
+    record_not_found: does not exist
+    back: Go back
+    edit: Edit
+    delete: Delete
+    confirmation: ¿Are you sure?
+    deleted: deleted
+    workstations: workstations
+    students_workstations: students' workstations
+    teachers_workstations: teachers' workstations
+    servers_workstations: servers' workstations
+    thin_clients_workstations: thin clients' workstations
+    students: student's
+    teachers: teacher's
+    servers: server's
+    thin_clients: thin-clients'
+    furnishings: furnishings
+    students_furnishings: students' furnishings
+    teachers_furnishings: teachers' furnishings
+    servers_furnishings: servers' furnishings
+    software: software
+    students_software: software - standalone workstations (students)
+    teachers_software: software - standalone workstations (teachers)
+    servers_software: software - servers
+    tc_software: software - thin-clients
+    yes_txt: "yes"
+    no_txt: "no"
+    show_hide_info: Show/Hide info
+    show_hide_desc: Show/Hide descrip
+    show_hide_curr: Show/Hide currency
+    pdf_version: Download printable version
+    item: Item
+    desc: Description
+    unit_price: Unit price
+    qty: Quantity
+    subtotal: Subtotal
+    reference_values: Reference values
+    summary_of: Summary of
+    access_summary: Access summary
+    spanish: Spanish
+    english: English
+    printers: printers
+    scanners: scanners
+    currency:
+      ars: peso
+      usd: dollar
+      
+  number:
+    currency:
+      format:
+        unit: u$s
+        format: "%u %n"
+        
+  time:
+    formats:
+      default: "%m/%d/%Y, %H:%M"

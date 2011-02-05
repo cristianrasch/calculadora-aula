@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<meta name="description" content="<%= t('site.description') %>"/>
+<meta name="keywords" content="<%= t('site.keywords') %>"/> 
+<meta name="author" content="<%= t('site.author') %>"/> 
+
+<%= javascript_include_tag :defaults %> 
+<%= stylesheet_link_tag 'style' %>
+<%= csrf_meta_tag %>
+
+<title><%= Conf.site['title'] %></title>
+
+<%= yield :head %>
+</head>
+
+<body>
+
+<div class="container">
+
+	<div class="header">
+		
+		<div class="title">
+			<h3>
+				<%= t('site.project_title') %>
+			</h3>
+		</div>
+
+		<%= render :partial => 'shared/navigation' %>
+
+	</div>
+
+	<div class="main">
+		
+		<div class="content">
+
+			<h1><%= yield :page_title %></h1>
+			
+			<% if flash[:notice] %>
+				<div class="notice"><%= flash[:notice].html_safe %></div>
+			<% end %>
+			
+			<% if flash[:error] %>
+				<div class="error"><%= flash[:error].html_safe %></div>
+			<% end %>
+			
+			<p><%= yield %></p>
+
+		</div>
+
+		<div class="sidenav">
+			<%= yield :sidenav %>
+		</div>
+	
+		<div class="clearer"><span></span></div>
+
+	</div>
+
+</div>
+
+<div class="footer">
+	&copy;&nbsp;<%= Date.today.year %>&nbsp;
+	<%= link_to 'UNLAM', 'http://www.unlam.edu.ar', 'data-popup' => true %>.&nbsp;
+	<%= t 'site.template_design' %>&nbsp;
+	<%= link_to 'Arcsin', 'http://arcsin.se', 'data-popup' => true %>&nbsp;|&nbsp;
+	<%= link_to_unless I18n.locale == 'es-AR', t('msgs.spanish'), request.path+'?locale=es-AR' %>
+	&nbsp;-&nbsp;
+	<%= link_to_unless I18n.locale == 'en', t('msgs.english'), request.path+'?locale=en' %>
+</div>
+
+</body>
+
+</html>

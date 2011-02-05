@@ -1,0 +1,17 @@
+<% content_for :page_title do %>
+  <%= h(@software.budget.name).humanize %>
+  &nbsp;::&nbsp;
+  <%= target_desc(@software.target).humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<% unless @software.errors.empty? %>
+  <div class="error">
+	  <%= error_messages_for :software, :header_message => nil %>
+  </div>
+<% end %>
+<%= form_for :software,
+             :url => budget_software_path(@software.budget, @software),
+             :html => {:method => :put} do |f| %>
+  <%= render :partial => f, :locals => {:soft => @software} %>
+<% end %>

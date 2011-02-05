@@ -1,0 +1,38 @@
+<div>
+  <p>
+		<%= form.label :ports_per_switch,
+	              LanSettings.human_attribute_name('ports_per_switch').humanize %><br>
+	  <%= form.text_field :ports_per_switch %>
+  </p>
+	<p class="desc hidden">
+    <%= form.text_area :ports_per_switch_desc, :rows => Conf.ui['tas_row_count'], 
+                       :cols => Conf.ui['tas_col_count'] %>
+  </p>
+</div>
+<div>
+  <p>
+		<%= form.label :medium_distance_bt_pcs_switch,
+	              LanSettings.human_attribute_name('medium_distance_bt_pcs_switch').humanize %><br>
+	  <%= form.text_field :medium_distance_bt_pcs_switch %>
+	</p>
+	<p class="desc hidden">
+    <%= form.text_area :medium_distance_bt_pcs_switch_desc, :rows => Conf.ui['tas_row_count'], 
+                       :cols => Conf.ui['tas_col_count'] %>
+  </p>
+</div>
+<div>
+  <p>
+		<%= form.label :installation_materials_and_wiring_cost,
+	              LanSettings.human_attribute_name('installation_materials_and_wiring_cost').humanize %><br>
+	  <%= form.text_field :installation_materials_and_wiring_cost %>
+	</p>
+	<%= curr_opts_for ls, :installation_materials_and_wiring_cost %>
+	<p class="desc hidden">
+    <%= form.text_area :installation_materials_and_wiring_cost_desc, 
+                       :rows => Conf.ui['tas_row_count'], 
+                       :cols => Conf.ui['tas_col_count'] %>
+  </p>
+</div>
+<p>
+  <%= form.submit t('msgs.save') %>
+</p>

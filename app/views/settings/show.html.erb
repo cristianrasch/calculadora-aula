@@ -1,0 +1,276 @@
+<% content_for :page_title do %>
+  <%= h(@budget.name).humanize %> :: <%= Settings.model_name.human.humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<% if @settings.students_standalone_workstations_enabled %>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('students_standalone_workstations_enabled').humanize %></label>
+  	&nbsp;-&nbsp;
+	  <%= strong yes_no(@settings.students_standalone_workstations_enabled) %>
+		<em>&nbsp;(<%= number_to_currency @settings.students_standalone_workstations_cost %>)</em>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_students_standalone_workstations_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% if @settings.teachers_standalone_workstations_enabled %>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('teachers_standalone_workstations_enabled').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong yes_no(@settings.teachers_standalone_workstations_enabled) %>
+		<em>&nbsp;(<%= number_to_currency @settings.teachers_standalone_workstations_cost %>)</em>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_teachers_standalone_workstations_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% if @settings.thin_clients_enabled %>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('thin_clients_enabled').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong yes_no(@settings.thin_clients_enabled) %>
+		<em>&nbsp;(<%= number_to_currency @settings.thin_clients_cost %>)</em>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_thin_clients_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% if @settings.thin_clients_server_enabled %>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('thin_clients_server_enabled').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong yes_no(@settings.thin_clients_server_enabled) %>
+		<em>&nbsp;(<%= number_to_currency @settings.thin_clients_server_cost %>)</em>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_thin_clients_server_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% if @settings.lan_enabled %>
+<div>
+	<p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('lan_enabled').humanize %></label>
+	  &nbsp;-&nbsp;		
+	  <%= strong yes_no(@settings.lan_enabled) %>
+		<em>&nbsp;(<%= number_to_currency @settings.lan_cost %>)</em>
+	</p>
+	<p class="desc hidden">
+		<%= total_cost_desc ls_total_cost_desc(@budget.lan_settings) if @budget.lan_settings %><br>
+	</p>
+</div>
+<% end %>
+
+<% if @settings.ups_enabled %>
+<div>
+	<p>
+	  <%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('ups_enabled').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong yes_no(@settings.ups_enabled) %>
+		<em>&nbsp;(<%= number_to_currency @settings.ups_cost %>)</em>
+	</p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_ups_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% unless @settings.printers_count.zero? %>
+<div>
+	<p>
+	  <%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('printers_count').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong @settings.printers_count %>
+		<em>&nbsp;(<%= number_to_currency @settings.printers_cost %>)</em>
+	</p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_printers_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% unless @settings.scanners_count.zero? %>
+<div>
+	<p>
+		<%= image_tag 'info.png', :border => 0 %>
+	  <label><%= Settings.human_attribute_name('scanners_count').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong @settings.scanners_count %>
+		<em>&nbsp;(<%= number_to_currency @settings.scanners_cost %>)</em>
+	</p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_scanners_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% if @settings.students_furnishings_enabled %>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('students_furnishings_enabled').humanize %></label>
+  	&nbsp;-&nbsp;
+	  <%= strong yes_no(@settings.students_furnishings_enabled) %>
+		<em>&nbsp;(<%= number_to_currency @settings.students_furnishings_cost %>)</em>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_students_furnishings_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% if @settings.teachers_furnishings_enabled %>
+<div>
+	<p>
+		<%= image_tag 'info.png', :border => 0 %>
+	  <label><%= Settings.human_attribute_name('teachers_furnishings_enabled').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong yes_no(@settings.teachers_furnishings_enabled) %>
+		<em>&nbsp;(<%= number_to_currency @settings.teachers_furnishings_cost %>)</em>
+	</p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_teachers_furnishings_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% if @settings.servers_furnishings_enabled %>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('servers_furnishings_enabled').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong yes_no(@settings.servers_furnishings_enabled) %>
+		<em>&nbsp;(<%= number_to_currency @settings.servers_furnishings_cost %>)</em>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_servers_furnishings_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% if @settings.prop_students_soft_enabled? %>
+<div>
+	<p>
+	  <%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('prop_students_soft_enabled').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong yes_no(@settings.prop_students_soft_enabled?) %>
+		<em>&nbsp;(<%= number_to_currency @settings.students_software_cost %>)</em>
+	</p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_students_software_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% if @settings.prop_teachers_soft_enabled? %>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('prop_teachers_soft_enabled').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong yes_no(@settings.prop_teachers_soft_enabled?) %>
+		<em>&nbsp;(<%= number_to_currency @settings.teachers_software_cost %>)</em>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_teachers_software_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% if @settings.prop_tc_server_soft_enabled? %>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('prop_tc_server_soft_enabled').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong yes_no(@settings.prop_tc_server_soft_enabled?) %>
+		<em>&nbsp;(<%= number_to_currency @settings.tc_server_software_cost %>)</em>
+  </p>
+	<span class="desc hidden">
+		<%= total_cost_desc s_tc_server_software_cost_desc(@budget), '*' %><br>
+	</span>
+</div>
+<% end %>
+
+<% if @settings.prop_tc_soft_enabled? %>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('prop_tc_soft_enabled').humanize %></label>
+  	&nbsp;-&nbsp;
+	  <%= strong yes_no(@settings.prop_tc_soft_enabled?) %>
+		<em>&nbsp;(<%= number_to_currency @settings.tc_software_cost %>)</em>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_tc_software_cost_desc(@budget), '*' %><br>
+	</p>
+</div>
+<% end %>
+
+<% unless @settings.building_improvements_cost.zero? %>
+<div>
+	<p>
+		<%= image_tag 'info.png', :border => 0 unless @settings.building_improvements_cost_desc.blank? %>
+	  <label><%= Settings.human_attribute_name('building_improvements_cost').humanize %></label>
+		&nbsp;-&nbsp;
+		<%= strong number_to_currency(@settings.building_improvements_cost) %>
+	</p>
+	<p class="desc hidden">
+      <%= @settings.building_improvements_cost_desc %>
+  </p>
+</div>
+<% end %>
+
+<% unless @settings.electric_installation_cost.zero? %>
+<div>
+	<p>
+		<%= image_tag 'info.png', :border => 0 unless @settings.electric_installation_cost_desc.blank? %>
+	  <label><%= Settings.human_attribute_name('electric_installation_cost').humanize %></label>
+		&nbsp;-&nbsp;
+		<%= strong number_to_currency(@settings.electric_installation_cost) %>
+	</p>
+	<p class="desc hidden">
+      <%= raw @settings.electric_installation_cost_desc %>
+  </p>
+</div>
+<% end %>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Settings.human_attribute_name('total_cost').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong number_to_currency(@settings.total_cost) %>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc s_total_cost_desc(@budget) %><br>
+	</p>
+</div>
+<p>
+	<label><%= Settings.human_attribute_name('created_at').humanize %></label><br/>
+  <%= em l(@settings.created_at)  %>
+</p>
+<p>
+  <label><%= Settings.human_attribute_name('updated_at').humanize %></label><br/>
+  <%= em l(@settings.updated_at)  %>
+</p>

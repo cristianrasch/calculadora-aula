@@ -1,0 +1,18 @@
+<% HardwarePrices.price_cols.each do |col| %>
+<div>
+  <p>
+    <%= form.label col,
+                   HardwarePrices.human_attribute_name(col).humanize %><br/>
+    <%= form.text_field col %>  
+  </p>
+  <%= curr_opts_for(hp, col) %>
+  <p class="desc hidden">
+    <%= form.text_area "#{col}_desc", :rows => Conf.ui['tas_row_count'], 
+                       :cols => Conf.ui['tas_col_count'] %>
+  </p>
+</div>
+<% end %>
+
+<p>
+  <%= form.submit t('msgs.save') %>
+</p>

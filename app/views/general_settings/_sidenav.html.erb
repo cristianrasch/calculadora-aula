@@ -1,0 +1,19 @@
+<h1><%= t 'msgs.actions' %></h1>
+<ul>
+    <% if controller.action_name == 'show' %>
+	    <li><%= link_to t('msgs.edit'),
+	                    edit_budget_general_settings_path(@budget) %></li>
+	    <li><%= link_to t('msgs.delete'), 
+	                    budget_general_settings_path(@budget),
+	                    :method => :delete,
+	                    :confirm => t('msgs.confirmation') %></li>
+      <li>
+        <%= link_to_function t('msgs.show_hide_info'), 
+                             "$('p.desc.hidden').each(function(){$(this).toggle()})" %>
+      </li>
+	  <% end %>
+
+	<% unless request.path == root_path %>
+	 <li><%= link_to t('msgs.back'), @budget %></li>
+	<% end %>
+</ul>

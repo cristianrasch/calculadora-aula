@@ -1,0 +1,16 @@
+<%= content_for :page_title, Budget.model_name.human.pluralize.humanize %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<ul>
+	<% if @budgets.empty? %>
+		<%= model_not_found Budget %>
+	<% else %>
+    <% @budgets.each do |budget| %>
+		  <li>
+		  	<%= link_to h(budget.name).humanize, budget %>
+		  </li>
+		<% end %>
+	<% end %>
+</ul>
+
+<%= will_paginate @budgets %>

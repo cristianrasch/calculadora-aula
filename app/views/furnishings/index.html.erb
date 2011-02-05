@@ -1,0 +1,37 @@
+<% content_for :page_title, t('msgs.furnishings').humanize %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<ul>
+  <li>
+    <% if @budget.students_furnishings %>
+      <%= link_to t('msgs.students').humanize,
+                  budget_furnishings_path(@budget, @budget.students_furnishings) %>
+    <% else %>
+      <%= link_to t('msgs.students').humanize,
+                  new_budget_furnishings_path(@budget,
+                                              :target => Furnishings::Target::STUDENTS) %>
+    <% end %>
+  </li>
+
+  <li>
+    <% if @budget.teachers_furnishings %>
+      <%= link_to t('msgs.teachers').humanize,
+                  budget_furnishings_path(@budget, @budget.teachers_furnishings) %>
+    <% else %>
+      <%= link_to t('msgs.teachers').humanize,
+                  new_budget_furnishings_path(@budget,
+                                              :target => Furnishings::Target::TEACHERS) %>
+    <% end %>
+  </li>
+
+  <li>
+    <% if @budget.servers_furnishings %>
+      <%= link_to t('msgs.servers').humanize,
+                  budget_furnishings_path(@budget, @budget.servers_furnishings) %>
+    <% else %>
+      <%= link_to t('msgs.servers').humanize,
+                  new_budget_furnishings_path(@budget,
+                                              :target => Furnishings::Target::SERVERS) %>
+    <% end %>
+  </li>
+</ul>

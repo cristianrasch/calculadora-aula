@@ -1,0 +1,25 @@
+<%= form.hidden_field :target  %>
+
+<% Furnishings.cols.each_with_index do |col, i| %>
+<p>
+  <%= form.label "#{col}_per_workstation",
+                 Furnishings.human_attribute_name("#{col}_per_workstation").humanize %><br>
+  <%= form.select "#{col}_per_workstation", (1..(i.zero? ? 5 : 3)).map {|i| [i,i]}, 
+                  :include_blank => true %>
+</p>
+<div>
+  <p>
+    <%= form.label "#{col}_unit_price",
+                   Furnishings.human_attribute_name("#{col}_unit_price").humanize %><br>
+    <%= form.text_field "#{col}_unit_price" %>
+  </p>
+  <p class="desc hidden">
+    <%= form.text_area "#{col}_unit_price_desc", :rows => Conf.ui['tas_row_count'], 
+                       :cols => Conf.ui['tas_col_count'] %>
+  </p>
+</div>
+<% end %>
+
+<p>
+  <%= form.submit t('msgs.save') %>
+</p>

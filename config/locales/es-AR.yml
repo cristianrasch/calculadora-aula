@@ -1,0 +1,386 @@
+# coding: utf-8
+
+"es-AR":
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d %b"
+      long: "%e de %B de %Y"
+    day_names:
+    - domingo
+    - lunes
+    - martes
+    - "miércoles"
+    - jueves
+    - viernes
+    - "sábado"
+    abbr_day_names:
+    - dom
+    - lun
+    - mar
+    - mie
+    - jue
+    - vie
+    - sab
+    month_names:
+    -
+    - enero
+    - febrero
+    - marzo
+    - abril
+    - mayo
+    - junio
+    - julio
+    - agosto
+    - septiembre
+    - octubre
+    - noviembre
+    - diciembre
+    abbr_month_names:
+    -
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - set
+    - oct
+    - nov
+    - dic
+    order:
+    - :day
+    - :month
+    - :year
+  time:
+    formats:
+      default: "%d/%m/%Y, %H:%M hs"
+      short: "%d/%m, %H:%M hs"
+      long: "%A, %e de %B de %Y, %H:%M hs"
+    am: am
+    pm: pm
+  datetime:
+    distance_in_words:
+      half_a_minute: medio minuto
+      less_than_x_seconds:
+        zero: menos de 1 segundo
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+      less_than_x_minutes:
+        zero: menos de 1 minuto
+        one: menos de 1 minuto
+        other: menos de %{count} minutos
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      about_x_hours:
+        one: aproximadamente 1 hora
+        other: aproximadamente %{count} horas
+      x_days:
+        one: "1 día"
+        other: "%{count} días"
+      about_x_months:
+        one: aproximandamente 1 mes
+        other: aproximadamente %{count} mes
+      x_months:
+        one: 1 month
+        other: "%{count} mes"
+      about_x_years:
+        one: "aproximadamente 1 año"
+        other: "aproximadamente %{count} años"
+      over_x_years:
+        one: "más de 1 año"
+        other: "más de %{count} años"
+    prompts:
+      year: "Año"
+      month: "Mes"
+      day: "Día"
+      hour: "Hora"
+      minute: "Minuto"
+      second: "Segundos"
+        
+  number:
+    percentage:
+      format:
+        delimiter: "."
+    precision:
+      format:
+        delimiter: "."
+    human:
+      format:
+        delimiter: "."
+        precision: "2"
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "byte"
+            other: "bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+    format:
+      precision: 3
+      separator: ","
+      delimiter: .
+    currency:
+      format:
+        unit: $
+        precision: 2
+        format: "%u %n"
+        separator: ","
+        delimiter: "."
+  activerecord:
+    models:
+      budget: presupuesto
+      general_settings: parámetros generales de aula
+      hardware_prices: precios del hardware
+      lan_settings: parámetros de la red local
+      workstations_settings: parámetros de las estaciones de trabajo
+      furnishings: mobiliario
+      software: software
+      settings: parámetros generales
+    attributes:
+      budget:
+        name: nombre
+        description: descripción
+        created_at: fecha de creación
+        updated_at: fecha de modificación
+        students_workstations_settings: estaciones de trabajo de los alumnos
+        teachers_workstations_settings: estaciones de trabajo de los maestros
+        thin_clients_workstations_settings: estaciones de trabajo de clientes livianos
+        servers_workstations_settings: estaciones de trabajo de servidores
+        students_furnishings: mobiliario de los alumnos
+        teachers_furnishings: mobiliario de los maestros
+        servers_furnishings: mobiliario de los servidores
+        students_standalone_software: software de los alumnos
+        teachers_standalone_software: software de los maestros
+        tc_server_software: software de los servidores
+        tc_software: software de los clientes livianos
+      general_settings:
+        students_count: cantidad total de alumnos
+        students_per_workstation: alumnos por computadora
+        teachers_count: cantidad de maestros (con pc)
+        clients_per_server: cantidad de clientes por servidor
+        students_workstations_count: cantidad de puestos de alumnos
+        servers_count: número de servidores
+        created_at: fecha de creación
+        updated_at: fecha de modificación
+      hardware_prices:
+        ram_unit_price: precio del giga de ram
+        hd_unit_price: precio del giga de disco
+        network_cable_unit_price: precio del metro de cable de red
+        switch_port_unit_price: precio de la boca de switch
+        printer_unit_price: precio de la impresora láser
+        scanner_unit_price: precio del escáner
+        rj45_connector_unit_price: precio del conector rj45
+        ups_unit_price: precio de la ups
+        created_at: fecha de creación
+        updated_at: fecha de modificación
+      lan_settings:
+        ports_per_switch: cantidad de bocas por switch
+        medium_distance_bt_pcs_switch: distancia media (mtrs) entre pcs y switch
+        installation_materials_and_wiring_cost: costo de materiales de instalación y cableado
+        workstations_and_servers_count: número de estaciones y servidores
+        switches_count: cantidad de switches
+        network_cable_meters_count: cantidad de mtrs de cable de red
+        switches_cost: precio de los switches
+        network_cable_cost: precio del cable de red
+        rj45_connectors_cost: precio de los conectores rj45
+        total_cost: subtotal
+        created_at: fecha de creación
+        updated_at: fecha de modificación
+      workstations_settings:
+        ram_size_in_gigs: tamaño de la memoria ram (en gigas)
+        hd_size_in_gigs: tamaño del disco rígido (en gigas)
+        ram_cost: costo de la memoria ram
+        hd_cost: costo del disco rígido
+        processor_unit_price: precio del procesador
+        motherboard_unit_price: precio de la placa madre
+        power_supply_unit_price: precio de la fuente de energía
+        case_unit_price: precio del gabinete
+        keyboard_unit_price: precio del teclado
+        mouse_unit_price: precio del ratón
+        speakers_unit_price: precio de los parlantes
+        monitor_unit_price: precio del monitor
+        external_network_card_unit_price: precio de la placa de red externa
+        external_video_card_unit_price: precio de la placa de video externa
+        external_power_supply_unit_price: precio de la fuente de energía externa
+        extra1_unit_price: precio del extra1
+        extra2_unit_price: precio del extra2
+        extra3_unit_price: precio del extra3
+        extra4_unit_price: precio del extra4
+        created_at: fecha de creación
+        updated_at: fecha de modificación
+        total_cost: subtotal
+      furnishings:
+        chairs_per_workstation: sillas por puesto
+        chairs_unit_price: precio de la silla
+        tables_per_workstation: mesas por puesto
+        tables_unit_price: precio de la mesa
+        others_per_workstation: otros por puesto
+        others_unit_price: precio de otros
+        created_at: fecha de creación
+        updated_at: fecha de modificación
+        total_cost: subtotal
+        chairs_cost: costo de las sillas
+        tables_cost: costo de las mesas
+        others_cost: costo de otros
+      software:
+        os_unit_price: precio del sistema operativo
+        office_suite_unit_price: precio de la suite de ofimática
+        class_mon_n_ctrl_apps_unit_price: precio de las aplicaciones de control y monitoreo de clase
+        tc_srv_unit_price: precio de los servidores de clientes livianos
+        web_srv_unit_price: precio del servidor WEB
+        proxy_srv_unit_price: precio del servidor proxy
+        file_n_print_srv_unit_price: precio del servidor de archivos e impresión
+        tc_lic_unit_price: precio de la licencia de clientes livianos
+        spec_apps_unit_price: precio de las aplicaciones de propósito específico
+        others_unit_price: precio de otros
+        free_soft_only: sólo soft libre?
+        total_cost: subtotal
+        created_at: fecha de creación
+        updated_at: fecha de modificación
+      settings:
+        students_standalone_workstations_enabled: puestos de trabajo autónomos para alumnos habilitados?
+        teachers_standalone_workstations_enabled: puestos de trabajo autónomos para maestros habilitados?
+        thin_clients_enabled: clientes livianos habilitados?
+        thin_clients_server_enabled: servidor de clientes livianos habilitado?
+        lan_enabled: red local habilitada?
+        ups_enabled: UPS habilitada?
+        printers_count: cantidad de impresoras
+        scanners_count: cantidad de escáneres
+        students_furnishings_enabled: mobiliario de alumnos habilitado?
+        teachers_furnishings_enabled: mobiliario de maestros habilitado?
+        servers_furnishings_enabled: mobiliario de servidor habilitado?
+        building_improvements_cost: costo de las reformas edilicias
+        electric_installation_cost: costo de la instalación eléctrica
+        created_at: fecha de creación
+        updated_at: fecha de modificación
+        total_cost: total
+        prop_students_soft_enabled: Soft prop de alumnos habilitado?
+        prop_teachers_soft_enabled: Soft prop de maestros habilitado?
+        prop_tc_server_soft_enabled: Soft prop de servidor de clientes livianos habilitado?
+        prop_tc_soft_enabled: Soft prop de clientes livianos habilitado? 
+    errors:
+      template:
+        header:
+          one: "Un error ocurrió al guardar tus datos."
+          other: "%{count} errores ocurrieron al guardar tus datos."
+        body: "Los siguientes campos presentan problemas:"
+      messages:
+        inclusion: "no está incluido en la lista"
+        exclusion: "no está disponible"
+        invalid: "no es válido"
+        confirmation: "no coincide con la confirmación"
+        accepted: debe ser aceptado
+        empty: "no puede estar vacío"
+        blank: no puede estar en blanco
+        too_long: "es demasiado largo (el máximo es de %{count} caracteres)"
+        too_short: "es demasiado corto (el mínimo es de %{count} caracteres)"
+        wrong_length: "no posee el largo correcto (debería ser de %{count} caracteres)"
+        taken: "no está disponible"
+        not_a_number: "no es un número"
+        greater_than: debe ser mayor a %{count}
+        greater_than_or_equal_to: debe ser mayor o igual a %{count}
+        equal_to: debe ser igual a %{count}
+        less_than: debe ser menor que %{count}
+        less_than_or_equal_to: debe ser menor o igual que %{count}
+        odd: debe ser par
+        even: debe ser impar
+        record_invalid: "La validación falló: %{errors}"
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " y "
+      last_word_connector: " y "
+      
+  site:
+    template_design: Diseño por
+    description: Calculadora de costos de implementación de un aula informática
+    keywords: calculadora, costos, aula informática, software libre, software privativo
+    author: Ing. Cristian Rasch
+    project_title: Implementación de un aula informática demostrativa para escuelas primarias y secundarias del partido de La Matanza
+    
+  msgs:
+    welcome: Bienvenido
+    about:
+      link: Sobre esta aplicación
+      title: Asistente para la estimación del costo de implementación de un aula informática
+      intro: 
+        p1: Implementación de un aula informática demostrativa para escuelas primarias y secundarias del partido de La Matanza (ING:011/2007).
+        p2: Financiado por la Universidad Nacional de La Matanza, Departamento de Ingeniería e Investigaciones Tecnológicas.
+      wizard:
+        aim: Objetivo de este asistente
+        p1: Como parte del proyecto (ver más abajo) se plantea crear una herramienta que ayude a estimar rápidamente el costo inicial de implementación de un aula informática, considerando principalmente el hardware, el software y el mobiliario básico.
+        p2: Variables como recursos humanos, infraestructura edilicia y demás deberán ser analizados para cada caso particular.
+        p3: Esta herramienta permite seleccionar entre las siguientes opciones
+        p4: Aulas con clientes livianos y su correspondiente servidor.|Aulas con puestos autónomos para los alumnos.|Puestos de trabajo especiales para los docentes.|Alternativas con software libre y/o gratuito, así como con software pago.
+      project:
+        aim: Objetivo general del proyecto
+        p1: En este proyecto se plantea estudiar una implementación de aula informática que sirva como modelo y referencia para colegios primarios y secundarios del Partido de La Matanza.
+        p2: Este estudio buscará minimizar la inversión necesaria a la hora de crear, modernizar o actualizar un aula informática con fines educativos. Utilizando Software Libre, además del ahorro económico se espera mejorar la disponibilidad de aplicaciones educativas y un mejor acceso a las tecnologías de la información por parte de alumnos y docentes.
+      warning:
+        title: Advertencia
+        p1: Esta herramienta está en etapa de desarrollo, utilícela bajo su propia responsabilidad.
+        p2: Para contribuir con correcciones o sugerencias contactarse con su desarrollador.
+      contact:
+        title: Contacto
+        p1: Sobre este estimador de aula
+        p2: Sobre el proyecto
+    not_found: No se encontraron
+    actions: Acciones
+    new: Crear
+    save: Guardar
+    saved: guardado
+    record_not_found: inexistente
+    back: Volver
+    edit: Editar
+    delete: Eliminar
+    confirmation: ¿Está seguro?
+    deleted: eliminado
+    workstations: estaciones de trabajo
+    students_workstations: estaciones de trabajo de los alumnos
+    teachers_workstations: estaciones de trabajo de los maestros
+    servers_workstations: estaciones de trabajo de los servidores
+    thin_clients_workstations: estaciones de trabajo de los clientes livianos
+    students: de los alumnos
+    teachers: de los maestros
+    servers: de los servidores
+    thin_clients: de los clientes livianos
+    furnishings: mobiliario
+    students_furnishings: mobiliario de los alumnos
+    teachers_furnishings: mobiliario de los maestros
+    servers_furnishings: mobiliario de los servidores
+    software: software
+    students_software: software - estaciones autónomas (alumnos)
+    teachers_software: software - estaciones autónomas (maestros)
+    servers_software: software - servidores
+    tc_software: software - clientes livianos
+    yes_txt: sí
+    no_txt: "no"
+    show_hide_info: Mostrar/Ocultar info
+    show_hide_desc: Mostrar/Ocultar desc
+    show_hide_curr: Mostrar/Ocultar moneda
+    pdf_version: Descargar versión imprimible
+    item: Item
+    desc: Descripción
+    unit_price: Precio unit.
+    qty: Cantidad
+    subtotal: Subtotal
+    reference_values: Valores de referencia
+    summary_of: Resúmen de
+    access_summary: Ver resúmen
+    spanish: Español
+    english: Inglés
+    printers: impresoras
+    scanners: escáners
+    currency:
+      ars: peso
+      usd: dólar

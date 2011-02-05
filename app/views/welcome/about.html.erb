@@ -1,0 +1,40 @@
+<%= content_for :page_title, t('msgs.about.title') %>
+
+<p class="justified">
+	<em>
+		<%= t('msgs.about.intro.p1') %><br>
+		<%= t('msgs.about.intro.p2') %>
+	</em>
+</p>
+
+<p class="justified">
+  <strong><%= t('msgs.about.wizard.aim') %></strong><br>
+	<%= t('msgs.about.wizard.p1') %><br>
+	<%= t('msgs.about.wizard.p2') %><br><br>
+	<%= t('msgs.about.wizard.p3') %>:<br>
+	<ul>
+		<% t('msgs.about.wizard.p4').split('|').each do |li| %>
+		  <li><%= li %></li>
+		<% end %>
+	</ul>
+</p>
+
+<p class="justified">
+  <strong><%= t('msgs.about.project.aim') %></strong><br>
+  <%= t('msgs.about.project.p1') %><br>
+	<%= t('msgs.about.project.p2') %>
+</p>
+
+<p class="justified">
+  <strong style="color: red;"><%= t('msgs.about.warning.title') %></strong><br>
+  <%= t('msgs.about.warning.p1') %><br>
+  <%= t('msgs.about.warning.p2') %>
+</p>
+
+<p class="justified">
+  <strong><%= t('msgs.about.contact.title') %></strong><br>
+  <%= t('msgs.about.contact.p1') %>:
+	&nbsp;<%= mail_to Conf.site['wizard_email_contact'], nil, :encode => 'javascript' %><br>
+  <%= t('msgs.about.contact.p2') %>:
+	&nbsp;<%= mail_to Conf.site['project_email_contact'], nil, :encode => 'javascript' %>
+</p>

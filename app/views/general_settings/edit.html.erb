@@ -1,0 +1,14 @@
+<% content_for :page_title do %>
+  <%= h(@budget.name).humanize %> :: <%= GeneralSettings.model_name.human.humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<% unless @budget.general_settings.errors.empty? %>
+  <div class="error">
+	  <%= error_messages_for :general_settings, :object => @budget.general_settings,
+                             :header_message => nil %>
+  </div>
+<% end %>
+<%= form_for [@budget, @budget.general_settings] do |f| %>
+  <%= render :partial => f %>
+<% end %>

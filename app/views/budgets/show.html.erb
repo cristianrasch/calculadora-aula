@@ -1,0 +1,209 @@
+<%= content_for :page_title, h(@budget.name).humanize %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<% if @budget.description %>
+  <p>
+  	<label><%= Budget.human_attribute_name('description').humanize %></label><br>
+    <%= h @budget.description.humanize  %>
+  </p>
+<% end %>
+
+<p>
+  <label><%= Budget.human_attribute_name('created_at').humanize %></label><br>
+  <%= l @budget.created_at  %>
+</p>
+
+<p>
+  <label><%= Budget.human_attribute_name('updated_at').humanize %></label><br>
+  <%= l @budget.updated_at  %>
+</p>
+
+<p>
+  <ul>
+    <li>
+      <% if @budget.general_settings %>
+        <%= link_to GeneralSettings.model_name.human.humanize,
+                    budget_general_settings_path(@budget) %>
+      <% else %>
+        <%= link_to GeneralSettings.model_name.human.humanize,
+                    new_budget_general_settings_path(@budget) %>
+      <% end %>
+    </li>
+
+    <li>
+      <% if @budget.hardware_prices %>
+        <%= link_to HardwarePrices.model_name.human.humanize,
+                    budget_hardware_prices_path(@budget) %>
+      <% else %>
+        <%= link_to HardwarePrices.model_name.human.humanize,
+                    new_budget_hardware_prices_path(@budget) %>
+      <% end %>
+    </li>
+
+    <li>
+      <% if @budget.lan_settings %>
+        <%= link_to LanSettings.model_name.human.humanize,
+                    budget_lan_settings_path(@budget) %>
+      <% else %>
+        <%= link_to LanSettings.model_name.human.humanize,
+                    new_budget_lan_settings_path(@budget) %>
+      <% end %>
+    </li>
+
+		<br/>
+    <li>
+      <%= t('msgs.workstations').humanize %><br/>
+    	<small>
+				<ul>
+				  <li>
+				    <% if @budget.students_workstations_settings %>
+				      <%= link_to t('msgs.students').humanize,
+				                  budget_workstations_settings_path(@budget, @budget.students_workstations_settings) %>
+				    <% else %>
+				      <%= link_to t('msgs.students').humanize,
+				                  new_budget_workstations_settings_path(@budget,
+				                                                        :target => WorkstationsSettings::Target::STUDENTS) %>
+				    <% end %>
+				  </li>
+				
+				  <li>
+				    <% if @budget.teachers_workstations_settings %>
+				      <%= link_to t('msgs.teachers').humanize,
+				                  budget_workstations_settings_path(@budget, @budget.teachers_workstations_settings) %>
+				    <% else %>
+				      <%= link_to t('msgs.teachers').humanize,
+				                  new_budget_workstations_settings_path(@budget,
+				                                                        :target => WorkstationsSettings::Target::TEACHERS) %>
+				    <% end %>
+				  </li>
+				
+				  <li>
+				    <% if @budget.servers_workstations_settings %>
+				      <%= link_to t('msgs.servers').humanize,
+				                  budget_workstations_settings_path(@budget, @budget.servers_workstations_settings) %>
+				    <% else %>
+				      <%= link_to t('msgs.servers').humanize,
+				                  new_budget_workstations_settings_path(@budget,
+				                                                        :target => WorkstationsSettings::Target::SERVERS) %>
+				    <% end %>
+				  </li>
+				
+				  <li>
+				    <% if @budget.thin_clients_workstations_settings %>
+				      <%= link_to t('msgs.thin_clients').humanize,
+				                  budget_workstations_settings_path(@budget, @budget.thin_clients_workstations_settings) %>
+				    <% else %>
+				      <%= link_to t('msgs.thin_clients').humanize,
+				                  new_budget_workstations_settings_path(@budget,
+				                                                        :target => WorkstationsSettings::Target::THIN_CLIENTS) %>
+				    <% end %>
+				  </li>
+				</ul>
+  		</small>
+    </li>
+
+    <br/>
+		<li>
+      <%= t('msgs.furnishings').humanize %><br/>
+			<small>
+				<ul>
+				  <li>
+				    <% if @budget.students_furnishings %>
+				      <%= link_to t('msgs.students').humanize,
+				                  budget_furnishings_path(@budget, @budget.students_furnishings) %>
+				    <% else %>
+				      <%= link_to t('msgs.students').humanize,
+				                  new_budget_furnishings_path(@budget,
+				                                              :target => Furnishings::Target::STUDENTS) %>
+				    <% end %>
+				  </li>
+				
+				  <li>
+				    <% if @budget.teachers_furnishings %>
+				      <%= link_to t('msgs.teachers').humanize,
+				                  budget_furnishings_path(@budget, @budget.teachers_furnishings) %>
+				    <% else %>
+				      <%= link_to t('msgs.teachers').humanize,
+				                  new_budget_furnishings_path(@budget,
+				                                              :target => Furnishings::Target::TEACHERS) %>
+				    <% end %>
+				  </li>
+				
+				  <li>
+				    <% if @budget.servers_furnishings %>
+				      <%= link_to t('msgs.servers').humanize,
+				                  budget_furnishings_path(@budget, @budget.servers_furnishings) %>
+				    <% else %>
+				      <%= link_to t('msgs.servers').humanize,
+				                  new_budget_furnishings_path(@budget,
+				                                              :target => Furnishings::Target::SERVERS) %>
+				    <% end %>
+				  </li>
+				</ul>
+			</small>
+    </li>
+		
+		<br/>
+		<li>
+      <%= t('msgs.software').humanize %><br/>
+			<small>
+				
+				<ul>
+				  <li>
+				    <% if @budget.students_standalone_software %>
+				      <%= link_to t('msgs.students').humanize,
+				                  budget_software_path(@budget, @budget.students_standalone_software) %>
+				    <% else %>
+				      <%= link_to t('msgs.students').humanize,
+				                  new_budget_software_path(@budget,
+				                                          :target => Software::Target::STUDENTS_STANDALONE) %>
+				    <% end %>
+				  </li>
+					
+					<li>
+				    <% if @budget.teachers_standalone_software %>
+				      <%= link_to t('msgs.teachers').humanize,
+				                  budget_software_path(@budget, @budget.teachers_standalone_software) %>
+				    <% else %>
+				      <%= link_to t('msgs.teachers').humanize,
+				                  new_budget_software_path(@budget,
+				                                          :target => Software::Target::TEACHERS_STANDALONE) %>
+				    <% end %>
+				  </li>
+					
+					<li>
+				    <% if @budget.tc_server_software %>
+				      <%= link_to t('msgs.servers').humanize,
+				                  budget_software_path(@budget, @budget.tc_server_software) %>
+				    <% else %>
+				      <%= link_to t('msgs.servers').humanize,
+				                  new_budget_software_path(@budget,
+				                                          :target => Software::Target::TC_SERVER) %>
+				    <% end %>
+				  </li>
+					
+					<li>
+				    <% if @budget.tc_software %>
+				      <%= link_to t('msgs.thin_clients').humanize,
+				                  budget_software_path(@budget, @budget.tc_software) %>
+				    <% else %>
+				      <%= link_to t('msgs.thin_clients').humanize,
+				                  new_budget_software_path(@budget,
+				                                          :target => Software::Target::TC) %>
+				    <% end %>
+				  </li>
+				</ul>
+			</small>
+    </li>
+		
+		<li>
+      <% if @budget.settings %>
+        <%= link_to Settings.model_name.human.humanize,
+                    budget_settings_path(@budget) %>
+      <% else %>
+        <%= link_to Settings.model_name.human.humanize,
+                    new_budget_settings_path(@budget) %>
+      <% end %>
+    </li>
+  </ul>
+</p>

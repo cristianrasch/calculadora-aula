@@ -1,0 +1,89 @@
+<p>
+  <%= form.label :students_standalone_workstations_enabled,
+              	 Settings.human_attribute_name('students_standalone_workstations_enabled').humanize %><br>
+  <%= yes_no_select :settings, :students_standalone_workstations_enabled, 
+										:selected => @settings.students_standalone_workstations_enabled ? 1 : 0 %>
+</p>
+<p>
+  <%= form.label :teachers_standalone_workstations_enabled,
+              	 Settings.human_attribute_name('teachers_standalone_workstations_enabled').humanize %><br>
+  <%= yes_no_select :settings, :teachers_standalone_workstations_enabled,
+										:selected => @settings.teachers_standalone_workstations_enabled ? 1 : 0 %>
+</p>
+<p>
+  <%= form.label :thin_clients_enabled,
+              	 Settings.human_attribute_name('thin_clients_enabled').humanize %><br>
+  <%= yes_no_select :settings, :thin_clients_enabled,
+										:selected => @settings.thin_clients_enabled ? 1 : 0 %>
+</p>
+<p>
+  <%= form.label :thin_clients_server_enabled,
+              	 Settings.human_attribute_name('thin_clients_server_enabled').humanize %><br>
+  <%= yes_no_select :settings, :thin_clients_server_enabled,
+										:selected => @settings.thin_clients_server_enabled ? 1 : 0 %>
+</p>
+<p>
+  <%= form.label :lan_enabled,
+              	 Settings.human_attribute_name('lan_enabled').humanize %><br>
+  <%= yes_no_select :settings, :lan_enabled,
+										:selected => @settings.lan_enabled ? 1 : 0 %>
+</p>
+<p>
+  <%= form.label :ups_enabled,
+              	 Settings.human_attribute_name('ups_enabled').humanize %><br>
+  <%= yes_no_select :settings, :ups_enabled,
+										:selected => @settings.ups_enabled ? 1 : 0 %>
+</p>
+<p>
+  <%= form.label :printers_count,
+              	 Settings.human_attribute_name('printers_count').humanize %><br>
+  <%= form.text_field :printers_count %>
+</p>
+<p>
+  <%= form.label :scanners_count,
+              	 Settings.human_attribute_name('scanners_count').humanize %><br>
+  <%= form.text_field :scanners_count %>
+</p>
+<p>
+  <%= form.label :students_furnishings_enabled,
+              	 Settings.human_attribute_name('students_furnishings_enabled').humanize %><br>
+  <%= yes_no_select :settings, :students_furnishings_enabled,
+										:selected => @settings.students_furnishings_enabled ? 1 : 0 %>
+</p>
+<p>
+  <%= form.label :teachers_furnishings_enabled,
+              	 Settings.human_attribute_name('teachers_furnishings_enabled').humanize %><br>
+  <%= yes_no_select :settings, :teachers_furnishings_enabled,
+										:selected => @settings.teachers_furnishings_enabled ? 1 : 0 %>
+</p>
+<p>
+  <%= form.label :servers_furnishings_enabled,
+              	 Settings.human_attribute_name('servers_furnishings_enabled').humanize %><br>
+  <%= yes_no_select :settings, :servers_furnishings_enabled,
+										:selected => @settings.servers_furnishings_enabled ? 1 : 0 %>
+</p>
+<p>
+  <%= form.label :building_improvements_cost,
+              	 Settings.human_attribute_name('building_improvements_cost').humanize %><br>
+  <%= form.text_field :building_improvements_cost %>
+	<div class="desc hidden">
+    <p>
+      <%= form.text_area :building_improvements_cost_desc, :rows => Conf.ui['tas_row_count'], 
+                         :cols => Conf.ui['tas_col_count'] %>
+    </p>
+  </div>
+</p>
+<p>
+  <%= form.label :electric_installation_cost,
+              	 Settings.human_attribute_name('electric_installation_cost').humanize %><br>
+  <%= form.text_field :electric_installation_cost %>
+	<div class="desc hidden">
+    <p>
+      <%= form.text_area :electric_installation_cost_desc, :rows => Conf.ui['tas_row_count'], 
+                         :cols => Conf.ui['tas_col_count'] %>
+    </p>
+  </div>
+</p>
+<p>
+  <%= form.submit t('msgs.save') %>
+</p>

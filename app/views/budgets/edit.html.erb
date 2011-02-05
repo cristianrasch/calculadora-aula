@@ -1,0 +1,4 @@
+<%= content_for :page_title, "#{t 'msgs.new'} #{Budget.model_name.human}" %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<%= render :partial => 'form' %>

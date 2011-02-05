@@ -1,0 +1,14 @@
+<% content_for :page_title do %>
+  <%= h(@budget.name).humanize %> :: <%= target_desc(@workstations_settings.target).humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<% unless @workstations_settings.errors.empty? %>
+  <div class="error">
+	  <%= error_messages_for :workstations_settings, :header_message => nil %>
+  </div>
+<% end %>
+<%= form_for :workstations_settings,
+             :url => budget_workstations_settings_index_path(@budget) do |f| %>
+  <%= render :partial => f, :locals => {:ws => @workstations_settings} %>
+<% end %>

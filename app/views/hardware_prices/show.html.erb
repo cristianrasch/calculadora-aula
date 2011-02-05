@@ -1,0 +1,27 @@
+<% content_for :page_title do %>
+  <%= h(@budget.name).humanize %> :: <%= HardwarePrices.model_name.human.humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<% HardwarePrices.price_cols.each do |col| %>
+<div>
+  <p>
+    <%= image_tag 'info.png', :border => 0 unless @hardware_prices.send("#{col}_desc").blank? %>
+    <label><%= HardwarePrices.human_attribute_name(col).humanize %></label>
+    &nbsp;-&nbsp;
+    <%= strong nbr_to_curr(@hardware_prices, col) %>
+  </p>
+  <div class="desc hidden">
+    <%= @hardware_prices.send("#{col}_desc") %>
+  </div>
+</div>
+<% end %>
+
+<p>
+	<label><%= HardwarePrices.human_attribute_name('created_at').humanize %></label><br>
+  <%= em l(@hardware_prices.created_at)  %>
+</p>
+<p>
+  <label><%= HardwarePrices.human_attribute_name('updated_at').humanize %></label><br>
+  <%= em l(@hardware_prices.updated_at)  %>
+</p>

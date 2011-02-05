@@ -1,0 +1,48 @@
+<% content_for :page_title, t('msgs.software').humanize %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<ul>
+  <li>
+    <% if @budget.students_standalone_software %>
+      <%= link_to t('msgs.students').humanize,
+                  budget_software_path(@budget, @budget.students_standalone_software) %>
+    <% else %>
+      <%= link_to t('msgs.students').humanize,
+                  new_budget_software_path(@budget,
+                                          :target => Software::Target::STUDENTS_STANDALONE) %>
+    <% end %>
+  </li>
+	
+	<li>
+    <% if @budget.teachers_standalone_software %>
+      <%= link_to t('msgs.teachers').humanize,
+                  budget_software_path(@budget, @budget.teachers_standalone_software) %>
+    <% else %>
+      <%= link_to t('msgs.teachers').humanize,
+                  new_budget_software_path(@budget,
+                                          :target => Software::Target::TEACHERS_STANDALONE) %>
+    <% end %>
+  </li>
+	
+	<li>
+    <% if @budget.tc_server_software %>
+      <%= link_to t('msgs.servers').humanize,
+                  budget_software_path(@budget, @budget.tc_server_software) %>
+    <% else %>
+      <%= link_to t('msgs.servers').humanize,
+                  new_budget_software_path(@budget,
+                                          :target => Software::Target::TC_SERVER) %>
+    <% end %>
+  </li>
+	
+	<li>
+    <% if @budget.tc_software %>
+      <%= link_to t('msgs.tc').humanize,
+                  budget_software_path(@budget, @budget.tc_software) %>
+    <% else %>
+      <%= link_to t('msgs.tc').humanize,
+                  new_budget_software_path(@budget,
+                                          :target => Software::Target::TC) %>
+    <% end %>
+  </li>
+</ul>

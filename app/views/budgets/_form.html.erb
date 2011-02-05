@@ -1,0 +1,19 @@
+<% unless @budget.errors.empty? %>
+  <div class="error">
+	  <%= error_messages_for :budget, :header_message => nil %>
+  </div>
+<% end %>
+
+<%= form_for @budget do |f| %>
+  <p>
+    <%= f.label :name, Budget.human_attribute_name('name').humanize %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description, Budget.human_attribute_name('description').humanize %><br>
+    <%= f.text_area :description, :rows => 4, :cols => 35 %>
+  </p>
+  <p>
+    <%= f.submit t('msgs.save') %>
+  </p>
+<% end %>

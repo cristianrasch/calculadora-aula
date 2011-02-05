@@ -1,0 +1,123 @@
+<% content_for :page_title do %>
+  <%= h(@budget.name).humanize %> :: <%= LanSettings.model_name.human.humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 unless @lan_settings.ports_per_switch_desc.blank? %>
+		<label><%= LanSettings.human_attribute_name('ports_per_switch').humanize %></label>
+  	&nbsp;-&nbsp;
+		<%= strong @lan_settings.ports_per_switch %>
+  </p>
+	<p class="desc hidden">
+      <%= @lan_settings.ports_per_switch_desc %>
+  </p>
+</div>
+<div>
+	<p>
+		<%= image_tag 'info.png', :border => 0 unless @lan_settings.medium_distance_bt_pcs_switch_desc.blank? %>
+	  <label><%= LanSettings.human_attribute_name('medium_distance_bt_pcs_switch').humanize %></label>
+  	&nbsp;-&nbsp;
+		<%= strong @lan_settings.medium_distance_bt_pcs_switch %>
+	</p>
+	<p class="desc hidden">
+      <%= @lan_settings.medium_distance_bt_pcs_switch_desc %>
+  </p>
+</div>
+<div>
+	<p>
+		<%= image_tag 'info.png', :border => 0 unless @lan_settings.installation_materials_and_wiring_cost_desc.blank? %>
+	  <label><%= LanSettings.human_attribute_name('installation_materials_and_wiring_cost').humanize %></label>
+  	&nbsp;-&nbsp;
+		<%= strong nbr_to_curr(@lan_settings, :installation_materials_and_wiring_cost) %>
+	</p>
+	<p class="desc hidden">
+      <%= @lan_settings.installation_materials_and_wiring_cost_desc %>
+  </p>
+</div>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= LanSettings.human_attribute_name('workstations_and_servers_count').humanize %></label>
+  	&nbsp;-&nbsp;
+	  <%= strong @lan_settings.workstations_and_servers_count %>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc ls_workstations_and_servers_count_desc(@budget) %>
+	</p>
+</div>
+<div>
+	<p>
+		<%= image_tag 'info.png', :border => 0 %>
+	  <label><%= LanSettings.human_attribute_name('switches_count').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong @lan_settings.switches_count %>
+	</p>
+	<p class="desc hidden">
+		<%= total_cost_desc ls_switches_count_desc(@lan_settings), '/' %>
+	</p>
+</div>
+<div>
+	<p>
+		<%= image_tag 'info.png', :border => 0 %>
+	  <label><%= LanSettings.human_attribute_name('network_cable_meters_count').humanize %></label>
+		&nbsp;-&nbsp;
+		<%= strong @lan_settings.network_cable_meters_count %>
+	</p>
+  <p class="desc hidden">
+		<%= total_cost_desc ls_network_cable_meters_count_desc(@lan_settings), '*' %>
+  </p>
+</div>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= LanSettings.human_attribute_name('switches_cost').humanize %></label>
+  	&nbsp;-&nbsp;
+	  <%= strong nbr_to_curr(@lan_settings, :switches_cost) %>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc ls_switches_cost_desc(@budget), '*' %>
+	</p>
+</div>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= LanSettings.human_attribute_name('network_cable_cost').humanize %></label>
+  	&nbsp;-&nbsp;
+	  <%= strong nbr_to_curr(@lan_settings, :network_cable_cost) %>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc ls_network_cable_cost_desc(@budget), '*' %>
+	</p>
+</div>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= LanSettings.human_attribute_name('rj45_connectors_cost').humanize %></label>
+  	&nbsp;-&nbsp;
+	  <%= strong nbr_to_curr(@lan_settings, :rj45_connectors_cost) %>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc ls_rj45_connectors_cost_desc(@budget), '*' %>
+	</p>
+</div>
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= LanSettings.human_attribute_name('total_cost').humanize %></label>
+	  &nbsp;-&nbsp;
+		<%= strong nbr_to_curr(@lan_settings, :total_cost) %>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc ls_total_cost_desc(@lan_settings) %>
+	</p>
+</div>
+<p>
+	<label><%= LanSettings.human_attribute_name('created_at').humanize %></label><br>
+  <%= em l(@lan_settings.created_at)  %>
+</p>
+<p>
+  <label><%= LanSettings.human_attribute_name('updated_at').humanize %></label><br>
+  <%= em l(@lan_settings.updated_at)  %>
+</p>

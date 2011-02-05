@@ -1,0 +1,42 @@
+<% content_for :head do %>
+<style>
+	th {
+		text-align: left;
+	}
+</style>
+<% end %>
+
+<% content_for :page_title do %>
+	<%= t('msgs.summary_of') %>  <%= h(@budget.name).humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<table border="0" cellpadding="5" cellpadding="5" width="100%">
+	<thead>
+		<tr>
+			<th><%= t('msgs.item') %></th>
+			<th><%= t('msgs.desc') %></th>
+			<th><%= t('msgs.unit_price') %></th>
+			<th><%= t('msgs.qty') %></th>
+			<th><%= t('msgs.subtotal') %></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% to_table(@budget).each do |row| %>
+		<tr>
+			<% row.each do |col| %>
+				<td><%= col %></td>
+			<% end %>			
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<br/>
+
+<p>
+	<%= Settings.human_attribute_name('total_cost').humanize %>:&nbsp;
+	<strong>
+		<%= number_to_currency @budget.settings.total_cost %>		
+	</strong>
+</p>

@@ -1,0 +1,13 @@
+<% content_for :page_title do %>
+  <%= h(@budget.name).humanize %> :: <%= HardwarePrices.model_name.human.humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<% unless @hardware_prices.errors.empty? %>
+  <div class="error">
+	  <%= error_messages_for :hardware_prices, :header_message => nil %>
+  </div>
+<% end %>
+<%= form_for budget_hardware_prices_path(@budget) do |f| %>
+  <%= render :partial => f, :locals => {:hp => @hardware_prices} %>
+<% end %>

@@ -1,0 +1,48 @@
+<% content_for :page_title, t('msgs.workstations').humanize %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<ul>
+  <li>
+    <% if @budget.students_workstations_settings %>
+      <%= link_to t('msgs.students').humanize,
+                  budget_workstations_settings_path(@budget, @budget.students_workstations_settings) %>
+    <% else %>
+      <%= link_to t('msgs.students').humanize,
+                  new_budget_workstations_settings_path(@budget,
+                                                        :target => WorkstationsSettings::Target::STUDENTS) %>
+    <% end %>
+  </li>
+
+  <li>
+    <% if @budget.teachers_workstations_settings %>
+      <%= link_to t('msgs.teachers').humanize,
+                  budget_workstations_settings_path(@budget, @budget.teachers_workstations_settings) %>
+    <% else %>
+      <%= link_to t('msgs.teachers').humanize,
+                  new_budget_workstations_settings_path(@budget,
+                                                        :target => WorkstationsSettings::Target::TEACHERS) %>
+    <% end %>
+  </li>
+
+  <li>
+    <% if @budget.servers_workstations_settings %>
+      <%= link_to t('msgs.servers').humanize,
+                  budget_workstations_settings_path(@budget, @budget.servers_workstations_settings) %>
+    <% else %>
+      <%= link_to t('msgs.servers').humanize,
+                  new_budget_workstations_settings_path(@budget,
+                                                        :target => WorkstationsSettings::Target::SERVERS) %>
+    <% end %>
+  </li>
+
+  <li>
+    <% if @budget.thin_clients_workstations_settings %>
+      <%= link_to t('msgs.thin_clients').humanize,
+                  budget_workstations_settings_path(@budget, @budget.thin_clients_workstations_settings) %>
+    <% else %>
+      <%= link_to t('msgs.thin_clients').humanize,
+                  new_budget_workstations_settings_path(@budget,
+                                                        :target => WorkstationsSettings::Target::THIN_CLIENTS) %>
+    <% end %>
+  </li>
+</ul>

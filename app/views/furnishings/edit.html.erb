@@ -1,0 +1,17 @@
+<% content_for :page_title do %>
+  <%= h(@furnishings.budget.name).humanize %>
+  &nbsp;::&nbsp;
+  <%= target_desc(@furnishings.target).humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<% unless @furnishings.errors.empty? %>
+  <div class="error">
+	  <%= error_messages_for :furnishings, :header_message => nil %>
+  </div>
+<% end %>
+<%= form_for :furnishings,
+						 :url => budget_furnishings_path(@furnishings.budget, @furnishings),
+             :html => {:method => :put} do |f| %>
+  <%= render :partial => f %>
+<% end %>

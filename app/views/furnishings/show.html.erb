@@ -1,0 +1,44 @@
+<% content_for :page_title do %>
+  <%= h(@budget.name).humanize %> :: <%= target_desc(@furnishings.target).humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<% Furnishings.cols.each do |col| %>
+<p>
+  <label><%= Furnishings.human_attribute_name("#{col}_per_workstation").humanize %></label>
+  &nbsp;-&nbsp;
+  <%= strong @furnishings.send("#{col}_per_workstation") %>
+</p>
+<div>
+  <p>
+    <%= image_tag 'info.png', :border => 0 unless @furnishings.send("#{col}_unit_price_desc").blank? %>
+    <label><%= Furnishings.human_attribute_name("#{col}_unit_price").humanize %></label>
+    &nbsp;-&nbsp;
+    <%= strong number_to_currency(@furnishings.send("#{col}_unit_price")) %>
+  </p>
+  <p class="desc hidden">
+      <%= @furnishings.send("#{col}_unit_price_desc") %>
+  </p>
+</div>
+<% end %>
+
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Furnishings.human_attribute_name('total_cost').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong number_to_currency @furnishings.total_cost %>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc f_total_cost_desc(@furnishings) %><br>
+	</p>
+</div>
+
+<p>
+	<label><%= Furnishings.human_attribute_name('created_at').humanize %></label><br/>
+  <%= em l(@furnishings.created_at)  %>
+</p>
+<p>
+  <label><%= Furnishings.human_attribute_name('updated_at').humanize %></label><br/>
+  <%= em l(@furnishings.updated_at)  %>
+</p>

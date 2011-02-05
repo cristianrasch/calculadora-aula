@@ -1,0 +1,45 @@
+<% content_for :page_title do %>
+  <%= h(@budget.name).humanize %> :: <%= target_desc(@software.target).humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<p>
+  <label><%= Software.human_attribute_name('free_soft_only').humanize %></label>
+	&nbsp;-&nbsp;
+  <%= strong t(@software.free_soft_only ? 'msgs.yes_txt' : 'msgs.no_txt').humanize %>
+</p>
+
+<% @software.price_cols.each do |col| %>
+<div>
+	<p>
+		<%= image_tag 'info.png', :border => 0 unless @software.send("#{col}_desc").blank? %>
+	  <label><%= Software.human_attribute_name(col).humanize %></label>
+		&nbsp;-&nbsp;
+		<%= strong nbr_to_curr(@software, col) %>
+	</p>
+	<p class="desc hidden">
+    <%= @software.send("#{col}_desc") %>
+  </p>
+</div>
+<% end %>
+
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= Software.human_attribute_name('total_cost').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong number_to_currency(@software.total_cost) %>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc soft_total_cost_desc(@software) %>
+	</p>
+</div>
+
+<p>
+	<label><%= Software.human_attribute_name('created_at').humanize %></label><br>
+  <%= em l(@software.created_at)  %>
+</p>
+<p>
+  <label><%= Software.human_attribute_name('updated_at').humanize %></label><br>
+  <%= em l(@software.updated_at)  %>
+</p>

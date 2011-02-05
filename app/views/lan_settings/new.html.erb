@@ -1,0 +1,13 @@
+<% content_for :page_title do %>
+  <%= h(@budget.name).humanize %> :: <%= LanSettings.model_name.human.humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<% unless @lan_settings.errors.empty? %>
+  <div class="error">
+	  <%= error_messages_for :lan_settings, :header_message => nil %>
+  </div>
+<% end %>
+<%= form_for budget_lan_settings_path(@budget) do |f| %>
+  <%= render :partial => f, :locals => {:ls => @lan_settings} %>
+<% end %>

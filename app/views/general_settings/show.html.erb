@@ -1,0 +1,62 @@
+<% content_for :page_title do %>
+  <%= h(@budget.name).humanize %> :: <%= GeneralSettings.model_name.human.humanize %>
+<% end %>
+<% content_for :sidenav, render(:partial => 'sidenav') %>
+
+<p>
+  <label><%= GeneralSettings.human_attribute_name('students_count').humanize %></label>
+	&nbsp;-&nbsp;
+  <%= strong @general_settings.students_count %>
+</p>
+
+<p>
+  <label><%= GeneralSettings.human_attribute_name('students_per_workstation').humanize %></label>
+	&nbsp;-&nbsp;
+  <%= strong @general_settings.students_per_workstation %>
+</p>
+
+<div>
+  <p>
+		<%= image_tag 'info.png', :border => 0 %>
+		<label><%= GeneralSettings.human_attribute_name('students_workstations_count').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong @general_settings.students_workstations_count %>
+  </p>
+	<p class="desc hidden">
+		<%= total_cost_desc @general_settings.students_workstations_count_desc, '/' %>
+	</p>
+</div>
+
+<p>
+  <label><%= GeneralSettings.human_attribute_name('teachers_count').humanize %></label>
+	&nbsp;-&nbsp;
+  <%= strong @general_settings.teachers_count %>
+</p>
+
+<p>
+  <label><%= GeneralSettings.human_attribute_name('clients_per_server').humanize %></label>
+  &nbsp;-&nbsp;
+	<%= strong @general_settings.clients_per_server %>
+</p>
+
+<div>
+	<p>
+	  <%= image_tag 'info.png', :border => 0 %>
+		<label><%= GeneralSettings.human_attribute_name('servers_count').humanize %></label>
+		&nbsp;-&nbsp;
+	  <%= strong @general_settings.servers_count %>
+	</p>
+	<p class="desc hidden">
+		<%= total_cost_desc @general_settings.servers_count_desc, '/' %>
+	</p>
+</div>
+
+<p>
+	<label><%= GeneralSettings.human_attribute_name('created_at').humanize %></label><br>
+  <%= em l(@general_settings.created_at)  %>
+</p>
+
+<p>
+  <label><%= GeneralSettings.human_attribute_name('updated_at').humanize %></label><br>
+  <%= em l(@general_settings.updated_at)  %>
+</p>

@@ -1,0 +1,8 @@
+.bundle
+.redcar
+.loadpath
+.project
+.rspec
+db/*.sqlite3
+log/*.log
+tmp/**/*
